@@ -7,6 +7,20 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 let huso = "MAD";
 
+const Fecha = ({f}) => { //con {f} extraemos el parámetro f de las props, sutituyendo props.f por simplemente f
+  return(
+    <div>
+        <h1>Fecha y hora actuales: </h1>
+        <h3>
+          {f.toUTCString()}      
+        </h3>
+        <button id="boton" onClick={() => {cambioHuso()}}>
+          Madrid (GMT + 2 h)
+        </button>
+    </div>
+  );
+}
+
 const App = () => {  
   const [valorFecha, setFecha] = useState(new Date());
 
@@ -18,13 +32,7 @@ const App = () => {
 
   return(
     <div>
-      <h1>Fecha y hora actuales: </h1>
-      <h3>
-        {valorFecha.toUTCString()}      
-      </h3>
-      <button id="boton" onClick={() => {cambioHuso()}}>
-        Madrid (GMT + 2 h)
-      </button>
+      <Fecha f={valorFecha}/>
     </div>
   );
 }
