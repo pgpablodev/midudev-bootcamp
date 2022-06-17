@@ -1,11 +1,8 @@
-export const Note = ({content,date,important}) => {
+export const Note = ({title,body}) => {
     return(
-      <li>
-        {important
-        ? <p>{content} (important note)</p>
-        : <p>{content}</p>
-        }        
-        <p>{date}</p>
+      <li>       
+        <p>{title}</p>
+        <p>{body}</p>
       </li>
     )
 }
